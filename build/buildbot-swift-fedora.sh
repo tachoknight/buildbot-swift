@@ -6,12 +6,23 @@
 
 START_TS=`date`
 
-dnf update
-dnf install -y git vim fedora-packager fedora-review
+OUTDIR=/out
+if [[ ! -d "$OUTDIR" ]]
+then
+    echo "$OUTDIR does not exist, so no place to copy the artifacts!"
+    exit 1
+fi
+
+dnf -y update
+dnf install -y vim fedora-packager fedora-review
 cd ~
 git clone https://github.com/tachoknight/swift-lang-packaging-fedora.git
 cd swift-lang-packaging-fedora
-./justbuild.sh
+#./justbuild.sh
+echo BUILT IT
+
+cp ~/rpmbuild/SRPMS/* $OUTDIR
+cp ~/rpmbuild/RPMS/x86_64/* $OUTDIR
 
 
 echo Started:_____$START_TS
