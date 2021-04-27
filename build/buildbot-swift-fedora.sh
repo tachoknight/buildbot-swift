@@ -18,8 +18,7 @@ dnf install -y vim fedora-packager fedora-review
 cd ~
 git clone https://github.com/tachoknight/swift-lang-packaging-fedora.git
 cd swift-lang-packaging-fedora
-#./justbuild.sh
-echo BUILT IT
+./justbuild.sh
 
 cp ~/rpmbuild/SRPMS/* $OUTDIR
 cp ~/rpmbuild/RPMS/x86_64/* $OUTDIR
