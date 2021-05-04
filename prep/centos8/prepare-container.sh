@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 dnf install -y git
+dnf config-manager --set-enabled powertools
 cd ~
 git clone https://github.com/tachoknight/buildbot-swift.git
 cd buildbot-swift/build
