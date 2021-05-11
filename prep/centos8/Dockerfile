@@ -1,4 +1,4 @@
-FROM centos:8
+FROM quay.io/centos/centos:stream
 LABEL MAINTAINER="Ron Olson <tachoknight@gmail.com>"
 LABEL PURPOSE="Prepare the container with just enough to get the real instructions from the git repo"
 WORKDIR /root
